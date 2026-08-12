@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Tracker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo">
+      <span class="logo-mark">₵</span>
+      <span class="logo-text">Crypto<b>Tracker</b></span>
+    </div>
+
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Search a coin, e.g. bitcoin...">
+    </div>
+
+    <div class="header-buttons">
+      <button id="themeToggleBtn" class="pill-btn">🌙 Dark</button>
+    </div>
+  </header>
+
+  <p id="statusLine" class="status-line">Loading market data...</p>
+
+  <main class="layout">
+
+    <section class="coin-list-panel">
+      <h2>Top coins</h2>
+      <div id="coinList" class="coin-list">
+      </div>
+    </section>
+
+    <section class="detail-panel" id="detailPanel">
+
+      <div class="detail-top">
+        <div class="detail-title">
+          <img id="detailIcon" src="" alt="" class="detail-icon">
+          <div>
+            <h2 id="detailName">Select a coin</h2>
+            <span id="detailSymbol" class="muted"></span>
+          </div>
+        </div>
+
+        <div class="detail-price-wrap">
+          <div id="detailPrice" class="detail-price">--</div>
+          <div id="detailChange" class="detail-change">--</div>
+        </div>
+      </div>
+
+      <div class="range-buttons" id="rangeButtons">
+        <button class="range-btn" data-days="1">24H</button>
+        <button class="range-btn" data-days="7">1W</button>
+        <button class="range-btn active" data-days="30">1M</button>
+        <button class="range-btn" data-days="90">3M</button>
+      </div>
+
+      <div class="chart-box">
+        <canvas id="priceChart" role="img" aria-label="Price history chart for the selected coin">Price history chart</canvas>
+      </div>
+
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-box">
+          <span class="stat-label">Market Cap</span>
+          <span class="stat-value" id="statMarketCap">--</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">24h Volume</span>
+          <span class="stat-value" id="statVolume">--</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">24h High</span>
+          <span class="stat-value" id="statHigh">--</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">24h Low</span>
+          <span class="stat-value" id="statLow">--</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
